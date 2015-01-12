@@ -1,5 +1,5 @@
 /*
-	Aerial 1.0 by HTML5 UP
+	Aerial by HTML5 UP
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
@@ -44,7 +44,18 @@
 			border-color: transparent;
 		}
 	}
-	
+
+/* Icon */
+
+	.icon {
+		@include icon;
+		position: relative;
+
+		> .label {
+			display: none;
+		}
+	}
+
 /* Wrapper */
 
 	@include vendor-keyframes('wrapper') {
@@ -68,9 +79,10 @@
 		@include vendor-property('animation', 'bg #{$duration-bg} linear infinite');
 		@include vendor-property('backface-visibility', 'hidden');
 		@include vendor-property('transform', 'translate3d(0,0,0)');
-		background-color: #348cb2;
-		background-image: url('images/cbe.jpg');
-		background-position: bottom left;
+
+		/* Set your background with this */
+		background: $bg;
+
 		background-repeat: repeat-x;
 		height: 100%;
 		left: 0;
@@ -79,7 +91,7 @@
 		top: 0;
 	}
 
-	@include bg(2250px);
+	@include bg($bg-width * 1.5);
 
 /* Overlay */
 
